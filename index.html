@@ -1,109 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="card">
-  <img src="https://via.placeholder.com/150" alt="Producto">
-  <h3>Reloj Inteligente</h3>
-  <p class="price">$15.000</p>
-  <button>Añadir al carrito</button>
-</div>
-    <style>
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: sans-serif;
-  }
-  button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-</style>
-<p>Clicks: <span id="contador">0</span></p>
-<button id="btn">Incrementar</button>
+  <h3>Crear un array llamado meses y que almacene el nombre de los doce meses del año.
+Mostrar por pantalla los doce nombres utilizando la función console.log().</h3>
+ <button onclick="ejercicio1()">Ejercicio 1</button>
 
-<script>
-  const display = document.getElementById('contador');
-  const boton = document.getElementById('btn');
-  let cuenta = 0;
+ <h3>EJERCICIO 2
+A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios",
+2];
+Determinar cual de los dos elementos de texto es mayor
+Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores
+necesarios para obtener un resultado true y otro resultado false
+Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos
+elementos numéricos</h3>
+ <button onclick="ejercicio2()">Ejercicio 2</button>
 
-  boton.addEventListener('click', () => {
-    cuenta++;
-    display.textContent = cuenta;
-  });
-</script>
-    <button id="toggleTheme">Cambiar Modo</button>
+ <h3>EJERCICIO 3
+Completar las condiciones de los if del siguiente script para que los mensajes se muestren
+siempre de forma correcta:
+var numero1 = 5;
+var numero2 = 8;
+if(...) {
+console.log("numero1 no es mayor que numero2");
+}
+if(...) {
+console.log("numero2 es positivo");
+}
+if(...) {
+console.log("numero1 es negativo o distinto de cero");
+}
+if(...) {
+console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que
+numero2");
+}</h3>
+ <button onclick="ejercicio3()">Ejercicio 3</button>
 
-<style>
-  body { transition: 0.3s; }
-  .dark-mode { background-color: #222; color: #fff; }
-</style>
+ <h3>DNI</h3>
+  <button onclick="ejercicio4()">Ejercicio 4</button>
 
-<script>
-  const btnTheme = document.getElementById('toggleTheme');
-  btnTheme.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-</script>
-    <input type="text" id="nombre" placeholder="Tu nombre">
-<button id="validar">Enviar</button>
-<p id="error" style="color: red;"></p>
-
-<script>
-  const inputNom = document.getElementById('nombre');
-  const btnVal = document.getElementById('validar');
-  const txtError = document.getElementById('error');
-
-  btnVal.addEventListener('click', () => {
-    if (inputNom.value.trim() === "") {
-      txtError.textContent = "Por favor, escribe un nombre.";
-    } else {
-      txtError.textContent = "";
-      alert("¡Formulario enviado!");
-    }
-  });
-</script>
-    <input type="text" id="tareaInput" placeholder="Nueva tarea">
-<button id="addBtn">Agregar</button>
-<ul id="lista"></ul>
-
-<script>
-  const input = document.getElementById('tareaInput');
-  const lista = document.getElementById('lista');
-  const btnAdd = document.getElementById('addBtn');
-
-  btnAdd.addEventListener('click', () => {
-    if (input.value !== "") {
-      const nuevaTarea = document.createElement('li');
-      nuevaTarea.textContent = input.value;
-      lista.appendChild(nuevaTarea);
-      input.value = ""; // Limpiar input
-    }
-  });
-</script>
-
-</body>
-</html>
+  <script src="index.js"></script>
 </body>
 </html>
