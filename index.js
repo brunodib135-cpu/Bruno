@@ -39,3 +39,123 @@ if(numero1 + 1 < numero2) {
 console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
 }
     }
+
+function ejercicio4(){
+    var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+    var numero = prompt("Introduce un numero de DNI: ");
+    if (numero < 0 || numero > 99999999){
+        console.log("El numero introducido no es valido")
+    }else{
+        let letra = letras[numero % 23];
+        console.log("La letra corresponde al numero " + numero + " es: " + letra);
+    }
+}
+
+function ejercicio5(){
+    let numero = prompt("Introduce un numero:");
+    let factorial = 1;
+    for (var i = 1; i <= numero; i++){
+        factorial = factorial * i;
+    }
+    console.log("El factorial de " + numero + " es: " + factorial);
+}
+
+function ejercicio6(){
+    let numero = prompt("Introduce un numero:");
+    par = true;
+    if (numero % 2 !== 0) {
+        par = false;
+    } else {
+        for (let i = 2; i < numero; i++) {
+            if (numero % i === 0) {
+                par = false;
+                break;
+            }
+        }
+    }
+    if (par) {
+        console.log(numero + " es un numero par.");
+    } else {
+        console.log(numero + " no es un numero par.");
+    }
+}
+
+function ejercicio7(){
+    var texto = prompt("Introduce algo");
+    if(texto == texto.toUpperCase()){
+        console.log("esta escrito en mayuscula");
+    }
+    else if(texto == texto.toLowerCase()){
+        console.log("esta escrio en minuscula");
+    }
+    else{
+        console.log("esta escrito mezclado");
+    }
+}
+
+function ejercicio8() {
+    let texto = prompt("Ingrese un texto: ");
+    let str = texto.replaceAll(" ", "").toLocaleLowerCase();
+    let arrStr = str.split("").reverse().join("");
+
+    if( str == arrStr){
+        console.log("El texto ingresado es: ", texto);
+        console.log("El texto ingresado es un palíndromo");
+    }
+    else{
+        console.log("El texto ingresado es: ", texto);
+        console.log("El texto ingresado no es un palíndromo");
+    }
+}
+
+function ejercicio9(){
+    function Persona(nombre, edad, genero){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.genero = genero;
+    }
+
+    Persona.prototype.obtDetalles = function() {
+        console.log(`Nombre: ${this.nombre}, Edad: ${this.edad}, Genero: ${this.genero}`);
+    };
+
+    function Estudiante(nombre, edad, genero, curso, grupo){
+        Persona.call(this, nombre, edad, genero);
+        this.curso = curso;
+        this.grupo = grupo;
+    }
+
+    Estudiante.prototype = Object.create(Persona.prototype);
+    Estudiante.prototype.constructor = Estudiante;
+
+    Estudiante.prototype.registrar = function(){
+        console.log(`${this.nombre} ha sido registrado en el curso ${this.curso}, grupo ${this.grupo}.`);
+    };
+
+    function Profesor(nombre, edad, genero, asignatura, nivel){
+        Persona.call(this, nombre, edad, genero);
+        this.asignatura = asignatura;
+        this.nivel = nivel;
+    }
+
+    Profesor.prototype = Object.create(Persona.prototype);
+    Profesor.prototype.constructor = Profesor;
+
+    Profesor.prototype.asignar = function(){
+        console.log(`${this.nombre} ha sido asignado en la asignatura ${this.asignatura}, nivel ${this.nivel}.`);
+    };
+}
+
+function ejercicio10() {
+    let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for(var i = 0; i < 36000; i++)
+    {
+        let dado1 = Math.floor(Math.random() * 6) + 1;
+        let dado2 = Math.floor(Math.random() * 6) + 1;
+        let suma = dado1 + dado2;
+        arr[suma] = arr[suma] + 1;
+    }
+
+    console.log(arr);
+}
